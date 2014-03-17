@@ -89,6 +89,9 @@ fancy_echo "Installing QT, used by Capybara Webkit for headless Javascript integ
 
 fancy_echo "Installing watch, to execute a program periodically and show the output ..."
   brew install watch
+
+fancy_echo "Installing Node.js and NPM, for running apps and installing JavaScript packages ..."
+  brew install node
 ### end mac-components/packages
 
 fancy_echo "Installing rbenv, to change Ruby versions ..."
