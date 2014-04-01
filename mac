@@ -60,39 +60,17 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 ### end mac-components/homebrew
 
-fancy_echo "Installing Postgres, a good open source relational database ..."
-  brew install postgres --no-python
-
-fancy_echo "Installing Redis, a good key-value database ..."
-  brew install redis
-
 fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
   brew install the_silver_searcher
 
 fancy_echo "Installing vim from Homebrew to get the latest version ..."
   brew install vim
 
-fancy_echo "Installing ctags, to index files for vim tab completion of methods, classes, variables ..."
-  brew install ctags
-
-fancy_echo "Installing tmux, to save project state and switch between projects ..."
-  brew install tmux
-
-fancy_echo "Installing reattach-to-user-namespace, for copy-paste and RubyMotion compatibility with tmux ..."
-  brew install reattach-to-user-namespace
-
 fancy_echo "Installing ImageMagick, to crop and resize images ..."
   brew install imagemagick
-
-fancy_echo "Installing QT, used by Capybara Webkit for headless Javascript integration testing ..."
-  brew install qt
-
-fancy_echo "Installing watch, to execute a program periodically and show the output ..."
-  brew install watch
+  
 ### end mac-components/packages
 
-fancy_echo "Starting Postgres ..."
-  brew services start postgres
 ### end mac-components/start-services
 
 fancy_echo "Installing rbenv, to change Ruby versions ..."
@@ -146,25 +124,7 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   bundle config --global jobs $((number_of_cores - 1))
 ### end mac-components/bundler
 
-fancy_echo "Installing Suspenders, thoughtbot's Rails template ..."
-  gem install suspenders --no-document
 ### end common-components/default-gems
-
-fancy_echo "Installing Heroku CLI client ..."
-  brew install heroku-toolbelt
-
-fancy_echo "Installing the heroku-config plugin to pull config variables locally to be used as ENV variables ..."
-  heroku plugins:install git://github.com/ddollar/heroku-config.git
-### end mac-components/heroku
-
-fancy_echo "Installing GitHub CLI client ..."
-  brew install hub
-### end mac-components/github
-
-fancy_echo "Installing rcm, to manage your dotfiles ..."
-  brew tap thoughtbot/formulae
-  brew install rcm
-### end mac-components/rcm
 
 fancy_echo "Installing your personal additions from ~/.laptop.local ..."
   if [[ -f ~/.laptop.local ]]; then
