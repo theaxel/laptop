@@ -60,19 +60,6 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 ### end mac-components/homebrew
 
-fancy_echo "Installing The Silver Searcher (better than ack or grep) to search the contents of files ..."
-  brew install the_silver_searcher
-
-fancy_echo "Installing vim from Homebrew to get the latest version ..."
-  brew install vim
-
-fancy_echo "Installing ImageMagick, to crop and resize images ..."
-  brew install imagemagick
-  
-### end mac-components/packages
-
-### end mac-components/start-services
-
 fancy_echo "Installing rbenv, to change Ruby versions ..."
   brew install rbenv
 
@@ -123,8 +110,6 @@ fancy_echo "Configuring Bundler for faster, parallel gem installation ..."
   number_of_cores=$(sysctl -n hw.ncpu)
   bundle config --global jobs $((number_of_cores - 1))
 ### end mac-components/bundler
-
-### end common-components/default-gems
 
 fancy_echo "Installing your personal additions from ~/.laptop.local ..."
   if [[ -f ~/.laptop.local ]]; then
