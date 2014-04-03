@@ -1,0 +1,2 @@
+fancy_echo "Installing oh-my-zsh framework ..."
+	curl -L http://install.ohmyz.sh | sh

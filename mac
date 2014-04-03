@@ -36,6 +36,10 @@ fancy_echo "Changing your shell to zsh ..."
   chsh -s $(which zsh)
 ### end common-components/zsh
 
+fancy_echo "Installing oh-my-zsh framework ..."
+	curl -L http://install.ohmyz.sh | sh
+### end common-components/oh-my-zsh
+
 if [[ -f /etc/zshenv ]]; then
   fancy_echo "Fixing OSX zsh environment bug ..."
     sudo mv /etc/{zshenv,zshrc}
