@@ -24,9 +24,8 @@ terminal and then click "Install".
 
 We support:
 
+* [14.04: Trusty Tahr](https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes),
 * [13.10: Saucy Salamander](https://wiki.ubuntu.com/SaucySalamander/ReleaseNotes),
-* [13.04: Raring Ringtail](https://wiki.ubuntu.com/RaringRingtail/ReleaseNotes),
-* [12.10: Quantal Quetzal](https://wiki.ubuntu.com/QuantalQuetzal/ReleaseNotes), and
 * [12.04 LTS: Precise Pangolin](https://wiki.ubuntu.com/PrecisePangolin/ReleaseNotes),
 * Debian stable (currently [wheezy](http://www.debian.org/releases/stable/)).
 * Debian testing (currently [jessie](http://www.debian.org/releases/testing/)).
@@ -38,13 +37,13 @@ Install
 
 Read, then run the script:
 
-    bash <(curl -s https://raw.github.com/thoughtbot/laptop/master/mac)
+    bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac)
 
 ### Linux
 
 Read, then run the script:
 
-    bash <(wget -qO- https://raw.github.com/thoughtbot/laptop/master/linux)
+    bash <(wget -qO- https://raw.githubusercontent.com/thoughtbot/laptop/master/linux)
 
 What it sets up
 ---------------
@@ -77,6 +76,36 @@ Put your customizations in `~/.laptop.local`. For example, your
     brew cask install dropbox
     brew cask install google-chrome
     brew cask install rdio
+
+Laptopped linux vagrant boxes
+-----------------------------------------------------------
+
+We now publish [vagrant](http://vagrantup.com) boxes for every supported linux
+distro. These boxes have the laptop script applied already and are ready to go.
+Getting started is as easy as creating a Vagrantfile that looks like:
+
+    Vagrant.configure('2') do
+      config.vm.box = 'thoughtbot/ubuntu-14-04-server-with-laptop'
+    end
+
+
+```sh
+# And then in the same directory as your Vagrantfile . . .
+vagrant up
+vagrant ssh
+
+```
+
+Laptopped vagrantcloud boxes currently available:
+
+* `thoughtbot/debian-wheezy-64-with-laptop`
+* `thoughtbot/debian-jessie-64-with-laptop`
+* `thoughtbot/ubuntu-14-04-server-with-laptop`
+* `thoughtbot/ubuntu-13-10-server-with-laptop`
+* `thoughtbot/ubuntu-12-04-server-with-laptop`
+
+See our [vagrantcloud profile](https://vagrantcloud.com/thoughtbot). You must
+have vagrant >= 1.5.0 to use vagrantcloud images directly.
 
 Credits
 -------
